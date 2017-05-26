@@ -4,7 +4,7 @@ var webpack = require('webpack');
 module.exports = {
   devtool: 'source-map',
   entry: [
-    'webpack-hot-middleware/client',
+    'webpack-hot-middleware/client?reload=true',
     './client/reduxstagram'
   ],
   output: {
@@ -31,5 +31,5 @@ module.exports = {
       loader: 'style-loader!css-loader!stylus-loader'
     }
     ]
-  }
+  },
 };
