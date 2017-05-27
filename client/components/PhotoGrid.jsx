@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const PhotoGrid = () => (
+import Photo from './Photo';
+
+const PhotoGrid = (props) => (
   <div className="photo-grid">
-    I'm a Photo Grid
+    {props.posts.map((post, idx) => <Photo key={idx} idx={idx} {...props} post={post}/>)}
   </div>
 );
 

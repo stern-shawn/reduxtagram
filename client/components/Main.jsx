@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const Main = ({ children }) => (
+const Main = (props) => (
   <div>
     <h1>
       <Link to="/">Reduxtagram</Link>
     </h1>
-    {children}
+    {React.cloneElement(props.children, props)}
   </div>
 );
 
