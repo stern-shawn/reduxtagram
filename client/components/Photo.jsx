@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import react from 'react-transition-group';
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
-const Photo = ({ post, comments, idx }) => (
+const Photo = ({ post, comments, idx, increment }) => (
   <figure className="grid-figure">
     <div className="grid-photo-wrap">
       <Link to={`view/${post.code}`}>
@@ -20,7 +20,7 @@ const Photo = ({ post, comments, idx }) => (
     <figcaption>
       <p>{post.caption}</p>
       <div className="control-buttons">
-        <button className="likes">&hearts; {post.likes}</button>
+        <button className="likes" onClick={() => increment(idx)}>&hearts; {post.likes}</button>
         <Link to={`view/${post.code}`} className="button">
           <span className="comment-count">
             <span className="speech-bubble"></span>
