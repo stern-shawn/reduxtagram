@@ -2,10 +2,9 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  devtool: 'source-map',
   entry: [
     'webpack-hot-middleware/client?reload=true',
-    './client/reduxstagram'
+    './client/reduxstagram',
   ],
   output: {
     path: path.join(__dirname, 'dist'),
@@ -16,15 +15,24 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ],
+  devtool: 'source-map',
+  resolve: {
+    extensions: [
+      '',
+      '.js',
+      '.jsx'
+    ],
+  },
   module: {
     loaders: [
-    // js
     {
-      test: /\.js$/,
-      loaders: ['babel'],
-      include: path.join(__dirname, 'client')
+      test: /\.jsx?$/,
+      loader: 'babel',
+      include: path.join(__dirname, 'client'),
+      query: {
+        presets: ['es2015', 'react'],
+      }
     },
-    // CSS
     { 
       test: /\.styl$/, 
       include: path.join(__dirname, 'client'),
