@@ -12,9 +12,7 @@ const defaultState = {
   comments,
 };
 
-const enhancers = compose(
-  window.devToolsExtension ? window.devToolsExtension() : (f) => f
-);
+const enhancers = compose(window.devToolsExtension ? window.devToolsExtension() : f => f);
 
 const store = createStore(rootReducer, defaultState, enhancers);
 
@@ -22,9 +20,9 @@ export const history = syncHistoryWithStore(browserHistory, store);
 
 if (module.hot) {
   module.hot.accept('./reducers/', () => {
-    const nextRootReducer = require('./reducers/index').default;
+    const nextRootReducer = require('./reducers/index').default; // eslint-disable-line global-require
     store.replaceReducer(nextRootReducer);
-  })
+  });
 }
 
 export default store;

@@ -42,7 +42,7 @@ class Comments extends Component {
         </form>
       </div>
     );
-  };
-};
+  }
+}
 
 export default Comments;

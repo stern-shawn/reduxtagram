@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router';
-import react from 'react-transition-group';
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 const Photo = ({ post, comments, idx, increment }) => (

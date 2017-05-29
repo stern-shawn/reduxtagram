@@ -1,12 +1,11 @@
 const posts = (state = [], action) => {
-  switch(action.type) {
+  switch (action.type) {
     case 'INCREMENT_LIKES':
-      const i = action.index;
-      return state.map((post, idx) => idx === i ?
+      return state.map((post, idx) => idx === action.index ? // eslint-disable-line no-confusing-arrow, max-len
         // Increment likes of the matching post
-        { ...post, likes: post.likes + 1} :
+        { ...post, likes: post.likes + 1 } :
         // Don't modify any other posts
-        post
+        post,
       );
     default:
       return state;

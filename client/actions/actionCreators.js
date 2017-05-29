@@ -1,5 +1,5 @@
 // Action to increment/decrement like count of a photo
-export const increment = (index) => ({
+export const increment = index => ({
   type: 'INCREMENT_LIKES',
   index,
 });
