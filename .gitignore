@@ -1,2 +1,4 @@
 # Ignore Dependencies
 node_modules
+
+.env
