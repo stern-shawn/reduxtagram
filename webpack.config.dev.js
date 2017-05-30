@@ -1,5 +1,5 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   entry: [
@@ -15,7 +15,6 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
   ],
-  devtool: 'source-map',
   resolve: {
     extensions: [
       '',
@@ -40,4 +39,5 @@ module.exports = {
       },
     ],
   },
+  devtool: 'source-map',
 };

@@ -1,8 +1,7 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
-  devtool: 'source-map',
   entry: [
     './client/reduxtagram',
   ],
@@ -15,7 +14,7 @@ module.exports = {
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': "'production'",
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
       },
     }),
     new webpack.optimize.UglifyJsPlugin({
@@ -48,4 +47,5 @@ module.exports = {
       },
     ],
   },
+  devtool: 'source-map',
 };

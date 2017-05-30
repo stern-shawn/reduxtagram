@@ -1,13 +1,14 @@
 {
-  "name": "reduxstagram",
-  "version": "0.0.1",
+  "name": "reduxtagram",
+  "version": "0.0.2",
   "description": "React + Redux Instagram clone for personal learning",
   "scripts": {
     "build:webpack": "NODE_ENV=production webpack --config webpack.config.prod.js",
     "build": "npm run clean && npm run build:webpack",
     "test": "NODE_ENV=production mocha './tests/**/*.spec.js' --compilers js:babel-core/register",
     "clean": "rimraf dist",
-    "start": "node devServer.js",
+    "start": "NODE_ENV=production node server.js",
+    "start:dev": "NODE_ENV=development node server.js",
     "tunnel": "browser-sync start --proxy localhost:7770 --tunnel shawnstern"
   },
   "author": "Shawn Stern",
